@@ -115,3 +115,38 @@
 .barra-progreso .progress-bar {
   background-color: var(--color-exito);
 }
+
+/* Colores de texto para mensajes */
+.texto-exito {
+  color: var(--color-exito);
+}
+
+.texto-info {
+  color: var(--color-info);
+}
+
+.texto-alerta {
+  color: var(--color-alerta);
+}
+
+.texto-error {
+  color: var(--color-error);
+}
+
+/* Gráfico de la UF */
+.grafico-uf {
+  display: block;
+  width: 100%;
+  height: 90px;
+}
+
+.grafico-uf-linea {
+  fill: none;
+  stroke: var(--color-info);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.grafico-uf-area {
+  fill: rgba(56, 189, 248, 0.12);
+}
