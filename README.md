@@ -8,8 +8,10 @@ Taller Evaluado 2 — Desarrollo Web y Móvil, segundo semestre 2026.
 
 | Nombre | Usuario GitHub |
 |---|---|
-| _(completar)_ | _(completar)_ |
-| _(completar)_ | _(completar)_ |
+| Lucas | [maudevdigital](https://github.com/maudevdigital) |
+| Alumno 2 | _(completar)_ |
+| Alumno 3 | _(completar)_ |
+
 
 ## Problemática
 
@@ -37,7 +39,7 @@ objetivo que se cobra en UF.
 
 ## Tecnologías
 
-React 19, Vite, React Router, Bootstrap 5, CSS propio, Fetch API y localStorage. No hay backend.
+React 19, Vite, React Router, Bootstrap 5, Bootstrap Icons, CSS propio, Fetch API y localStorage. No hay backend.
 
 ## Cómo ejecutar
 
@@ -54,10 +56,14 @@ La aplicación queda en http://localhost:5173.
 
 ```
 src/
-├── components/   piezas reutilizables de la interfaz (Navbar, Footer, ...)
+├── components/   piezas reutilizables (Navbar, Footer, MetaCard, BarraProgreso)
 ├── pages/        una vista por ruta (Inicio, NuevaMeta, DetalleMeta, NoEncontrada)
+├── data/         metas.json y abonos.json: datos de ejemplo para la primera visita
+├── hooks/        useMetas (metas y abonos + localStorage) y useUF (valor de la UF)
+├── services/     mindicador.js: la única parte que llama a la API
+├── utils/        formato.js, fechas.js y ahorro.js (cálculos)
 ├── styles/       theme.css: paleta, tipografías y ajustes sobre Bootstrap
-├── App.jsx       rutas de la aplicación
+├── App.jsx       rutas y estado principal
 └── main.jsx      punto de entrada
 public/
 └── logo.svg      logo y favicon
@@ -68,6 +74,16 @@ public/
 | `/` | Mis metas |
 | `/metas/nueva` | Formulario de nueva meta |
 | `/metas/:id` | Detalle de una meta |
+
+## Datos sin backend
+
+1. En la primera visita, las metas y los abonos se cargan desde `src/data/metas.json` y `src/data/abonos.json`.
+2. `useMetas` los mantiene en el estado de React; crear una meta o un abono actualiza ese estado.
+3. Cada cambio se guarda en localStorage (`metas-uf:metas` y `metas-uf:abonos`), así sobrevive a una recarga.
+4. Cada abono guarda la UF del día en que se hizo (`valorUF`). Su equivalencia no cambia y el historial
+   funciona aunque la API no responda.
+
+Para volver a los datos de ejemplo: DevTools (F12) → Application → Local Storage → borrar las dos claves.
 
 ## API pública: mindicador.cl
 
@@ -96,6 +112,14 @@ pesos. La API es la base del cálculo, no un complemento visual.
 **Uso:** no requiere clave. La app consulta una vez al cargar y una vez por cada abono. La UF futura solo
 existe hasta el día 9 del mes siguiente. Se da crédito a mindicador.cl en el pie de página.
 
+## Recursos de terceros
+
+| Recurso | Uso | Licencia |
+|---|---|---|
+| [Bootstrap](https://getbootstrap.com) | Grilla, formularios y componentes base | MIT |
+| [Bootstrap Icons](https://icons.getbootstrap.com) | Íconos de las metas | MIT |
+| [Inter](https://fonts.google.com/specimen/Inter) y [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) | Tipografías (Google Fonts) | SIL Open Font License |
+| [mindicador.cl](https://mindicador.cl) | Valor de la UF | Servicio gratuito; se cita la fuente en la app |
 
 ## Uso de Inteligencia Artificial
 
@@ -103,7 +127,7 @@ existe hasta el día 9 del mes siguiente. Se da crédito a mindicador.cl en el p
 |---|---|---|---|---|---|
 | Claude Code | Estructura inicial del proyecto | "Limpia la plantilla de Vite y arma la estructura base con rutas, Bootstrap y la paleta del Figma" | Carpetas, rutas, Navbar, Footer y `theme.css` | _(completar)_ | _(completar)_ |
 | Claude Code | Servicio de la API y hook | "Crea el servicio de mindicador.cl y un hook con estados de carga y error" | `mindicador.js`, `useUF.js` y `formato.js`, probados contra la API | _(completar)_ | _(completar)_ |
-
+| Claude Code | Estado de metas y tarjetas | "Arma el estado de metas y abonos con localStorage y las tarjetas con barra de avance; cambia los emojis por íconos" | `useMetas`, `MetaCard`, `BarraProgreso`, datos de ejemplo con la UF real y Bootstrap Icons | _(completar)_ | _(completar)_ |
 
 ## Limitaciones conocidas
 

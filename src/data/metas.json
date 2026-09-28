@@ -1,0 +1,5 @@
+[
+  {"id": "m1", "nombre": "Pie del departamento", "icono": "house-door", "objetivoUF": 200, "fechaObjetivo": "2030-01-01", "creadaEl": "2025-01-10"},
+  {"id": "m2", "nombre": "Intercambio en Madrid", "icono": "airplane", "objetivoUF": 60, "fechaObjetivo": "2026-12-15", "creadaEl": "2026-02-01"},
+  {"id": "m3", "nombre": "Fondo de emergencia", "icono": "life-preserver", "objetivoUF": 25, "fechaObjetivo": "2026-12-31", "creadaEl": "2026-02-01"}
+]
