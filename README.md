@@ -83,13 +83,27 @@ public/
 **Justificación:** sin el valor de la UF de cada fecha no es posible calcular cuánto avanza un abono hecho en
 pesos. La API es la base del cálculo, no un complemento visual.
 
-_(Se completa en la rama `feature/api-uf`: datos que se usan de la respuesta y manejo de errores.)_
+**Datos que se usan:** de cada elemento de `serie`, solo `fecha` (recortada a AAAA-MM-DD) y `valor` (pesos por UF).
+
+**Si la API falla:**
+
+| Situación | Mensaje |
+|---|---|
+| Sin conexión o más de 10 s sin respuesta | "No hay conexión con mindicador.cl." |
+| La API responde con error | "mindicador.cl no pudo entregar el valor de la UF." |
+| La fecha no tiene valor | "No hay valor de la UF para esa fecha." |
+
+**Uso:** no requiere clave. La app consulta una vez al cargar y una vez por cada abono. La UF futura solo
+existe hasta el día 9 del mes siguiente. Se da crédito a mindicador.cl en el pie de página.
+
 
 ## Uso de Inteligencia Artificial
 
 | Herramienta | Propósito | Consulta representativa | Resultado | Modificación humana | Aprendizaje |
 |---|---|---|---|---|---|
 | Claude Code | Estructura inicial del proyecto | "Limpia la plantilla de Vite y arma la estructura base con rutas, Bootstrap y la paleta del Figma" | Carpetas, rutas, Navbar, Footer y `theme.css` | _(completar)_ | _(completar)_ |
+| Claude Code | Servicio de la API y hook | "Crea el servicio de mindicador.cl y un hook con estados de carga y error" | `mindicador.js`, `useUF.js` y `formato.js`, probados contra la API | _(completar)_ | _(completar)_ |
+
 
 ## Limitaciones conocidas
 
