@@ -42,5 +42,16 @@ export default function useMetas() {
     setAbonos((actuales) => [...actuales, nuevo]);
   }
 
-  return { metas, abonos, agregarMeta, agregarAbono };
+    function eliminarAbono(id) {
+    setAbonos((actuales) => actuales.filter((abono) => abono.id !== id));
+  }
+
+  // Al eliminar una meta también se eliminan sus abonos, para no dejar datos huérfanos.
+  function eliminarMeta(id) {
+    setMetas((actuales) => actuales.filter((meta) => meta.id !== id));
+    setAbonos((actuales) => actuales.filter((abono) => abono.metaId !== id));
+  }
+
+  return { metas, abonos, agregarMeta, agregarAbono, eliminarAbono, eliminarMeta };
+
 }

@@ -102,9 +102,17 @@
   border-color: var(--color-exito);
 }
 
+/* Ícono de Bootstrap Icons dentro de un círculo verde */
 .icono-meta {
-  font-size: 1.75rem;
-  line-height: 1;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--color-exito);
+  background-color: rgba(16, 185, 129, 0.12);
 }
 
 .barra-progreso {
@@ -149,4 +157,13 @@
 
 .grafico-uf-area {
   fill: rgba(56, 189, 248, 0.12);
+}
+
+/* Detalle de meta */
+.vista-previa {
+  min-height: 1.5rem;
+}
+
+.lista-abonos li + li {
+  border-top: 1px solid var(--color-borde);
 }
