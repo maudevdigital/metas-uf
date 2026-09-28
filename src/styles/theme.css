@@ -1,0 +1,90 @@
+/*
+ * Identidad visual de Metas UF.
+ * Colores tomados del prototipo en Figma (tema oscuro).
+ * Bootstrap aporta la grilla y los componentes; aquí se ajustan a esta paleta.
+ */
+
+:root {
+  --color-fondo: #070a13;
+  --color-superficie: #0e1424;
+  --color-superficie-2: #161e2f;
+  --color-borde: #1e293b;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+
+  --color-exito: #10b981;
+  --color-exito-hover: #059669;
+  --color-info: #38bdf8;
+  --color-alerta: #f59e0b;
+  --color-error: #f43f5e;
+
+  --fuente-texto: 'Inter', system-ui, 'Segoe UI', sans-serif;
+  --fuente-numeros: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  --radio: 12px;
+}
+
+/* Variables de Bootstrap en modo oscuro, alineadas con la paleta */
+[data-bs-theme='dark'] {
+  --bs-body-bg: var(--color-fondo);
+  --bs-body-color: var(--color-texto);
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-emphasis-color: #f8fafc;
+  --bs-secondary-color: var(--color-texto-suave);
+  --bs-border-color: var(--color-borde);
+  --bs-border-radius: var(--radio);
+  --bs-link-color-rgb: 56, 189, 248;
+  --bs-link-hover-color-rgb: 125, 211, 252;
+}
+
+.btn-primary {
+  --bs-btn-color: var(--color-fondo);
+  --bs-btn-bg: var(--color-exito);
+  --bs-btn-border-color: var(--color-exito);
+  --bs-btn-hover-color: var(--color-fondo);
+  --bs-btn-hover-bg: var(--color-exito-hover);
+  --bs-btn-hover-border-color: var(--color-exito-hover);
+  --bs-btn-active-bg: var(--color-exito-hover);
+  --bs-btn-active-border-color: var(--color-exito-hover);
+  --bs-btn-focus-shadow-rgb: 16, 185, 129;
+  font-weight: 600;
+}
+
+/* Estructura general: el pie queda abajo aunque haya poco contenido */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.barra-navegacion {
+  background-color: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.barra-navegacion .nav-link.active {
+  color: var(--bs-emphasis-color);
+  font-weight: 600;
+}
+
+.pie-pagina {
+  border-top: 1px solid var(--color-borde);
+}
+
+/* Componentes propios */
+.tarjeta {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+}
+
+.texto-suave {
+  color: var(--color-texto-suave);
+}
+
+/* Montos en UF y pesos: fuente monoespaciada para que las cifras se alineen */
+.numero {
+  font-family: var(--fuente-numeros);
+  font-variant-numeric: tabular-nums;
+}
