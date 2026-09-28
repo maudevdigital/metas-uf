@@ -28,3 +28,15 @@ export function formatearFecha(fecha) {
     const [anio, mes, dia] = fecha.split('-').map(Number);
     return formatoFecha.format(new Date(anio, mes - 1, dia));
 }
+
+
+const formatoVariacion = new Intl.NumberFormat('es-CL', {
+  signDisplay: 'always',
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+// Variación porcentual con signo: +0,42 % o -0,10 %.
+export function formatearVariacion(porcentaje) {
+  return `${formatoVariacion.format(porcentaje)} %`;
+}
