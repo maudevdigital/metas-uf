@@ -5,16 +5,23 @@ import Inicio from './pages/Inicio';
 import NuevaMeta from './pages/NuevaMeta';
 import DetalleMeta from './pages/DetalleMeta';
 import NoEncontrada from './pages/NoEncontrada';
+import useMetas from './hooks/useMetas';
 
 export default function App() {
+  // El estado vive aquí para que todas las páginas vean los mismos datos.
+  const { metas, abonos, agregarMeta, agregarAbono } = useMetas();
+
   return (
     <div className="app">
       <Navbar />
       <main className="container py-4 flex-grow-1">
         <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/metas/nueva" element={<NuevaMeta />} />
-          <Route path="/metas/:id" element={<DetalleMeta />} />
+          <Route path="/" element={<Inicio metas={metas} abonos={abonos} />} />
+          <Route path="/metas/nueva" element={<NuevaMeta onAgregarMeta={agregarMeta} />} />
+          <Route
+            path="/metas/:id"
+            element={<DetalleMeta metas={metas} abonos={abonos} onAgregarAbono={agregarAbono} />}
+          />
           <Route path="*" element={<NoEncontrada />} />
         </Routes>
       </main>

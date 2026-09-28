@@ -88,3 +88,30 @@
   font-family: var(--fuente-numeros);
   font-variant-numeric: tabular-nums;
 }
+
+/* Tarjeta de meta: toda la tarjeta es un enlace al detalle */
+.tarjeta-meta {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.tarjeta-meta:hover,
+.tarjeta-meta:focus-visible {
+  color: inherit;
+  border-color: var(--color-exito);
+}
+
+.icono-meta {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.barra-progreso {
+  height: 0.5rem;
+  background-color: var(--color-superficie-2);
+}
+
+.barra-progreso .progress-bar {
+  background-color: var(--color-exito);
+}

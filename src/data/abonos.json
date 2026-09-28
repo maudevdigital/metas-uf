@@ -1,0 +1,16 @@
+[
+  {"id": "a1", "metaId": "m1", "fecha": "2025-01-15", "montoCLP": 350000, "valorUF": 38424.09},
+  {"id": "a2", "metaId": "m1", "fecha": "2025-04-15", "montoCLP": 350000, "valorUF": 38978.08},
+  {"id": "a3", "metaId": "m1", "fecha": "2025-07-15", "montoCLP": 400000, "valorUF": 39260.14},
+  {"id": "a4", "metaId": "m1", "fecha": "2025-10-15", "montoCLP": 350000, "valorUF": 39516.17},
+  {"id": "a5", "metaId": "m1", "fecha": "2026-01-15", "montoCLP": 400000, "valorUF": 39747.12},
+  {"id": "a6", "metaId": "m1", "fecha": "2026-04-15", "montoCLP": 350000, "valorUF": 39921.09},
+  {"id": "a7", "metaId": "m1", "fecha": "2026-07-15", "montoCLP": 400000, "valorUF": 40844.79},
+  {"id": "a8", "metaId": "m1", "fecha": "2026-09-15", "montoCLP": 450000, "valorUF": 40934.58},
+  {"id": "a9", "metaId": "m2", "fecha": "2026-02-10", "montoCLP": 300000, "valorUF": 39688.65},
+  {"id": "a10", "metaId": "m2", "fecha": "2026-05-10", "montoCLP": 300000, "valorUF": 40256.91},
+  {"id": "a11", "metaId": "m2", "fecha": "2026-08-10", "montoCLP": 300000, "valorUF": 40846.11},
+  {"id": "a12", "metaId": "m3", "fecha": "2026-02-05", "montoCLP": 350000, "valorUF": 39693.25},
+  {"id": "a13", "metaId": "m3", "fecha": "2026-04-05", "montoCLP": 350000, "valorUF": 39841.72},
+  {"id": "a14", "metaId": "m3", "fecha": "2026-06-05", "montoCLP": 350000, "valorUF": 40695.38}
+]
