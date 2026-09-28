@@ -9,7 +9,7 @@ import useMetas from './hooks/useMetas';
 
 export default function App() {
   // El estado vive aquí para que todas las páginas vean los mismos datos.
-  const { metas, abonos, agregarMeta, agregarAbono } = useMetas();
+  const { metas, abonos, agregarMeta, agregarAbono, eliminarAbono, eliminarMeta } = useMetas();
 
   return (
     <div className="app">
@@ -20,7 +20,15 @@ export default function App() {
           <Route path="/metas/nueva" element={<NuevaMeta onAgregarMeta={agregarMeta} />} />
           <Route
             path="/metas/:id"
-            element={<DetalleMeta metas={metas} abonos={abonos} onAgregarAbono={agregarAbono} />}
+            element={
+              <DetalleMeta
+                metas={metas}
+                abonos={abonos}
+                onAgregarAbono={agregarAbono}
+                onEliminarAbono={eliminarAbono}
+                onEliminarMeta={eliminarMeta}
+              />
+            }
           />
           <Route path="*" element={<NoEncontrada />} />
         </Routes>
