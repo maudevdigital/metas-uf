@@ -1,0 +1,27 @@
+.contenido-angosto {
+  max-width: 600px;
+}
+
+.selector-icono {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.25rem;
+  color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background-color: var(--color-superficie-2);
+  cursor: pointer;
+}
+
+.selector-icono.activo {
+  color: var(--color-exito);
+  border-color: var(--color-exito);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35);
+}
+
+.selector-icono:focus-within {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
