@@ -14,12 +14,13 @@ export default function PanelUF() {
     );
   }
 
-  if (error) {
+  // Si la API responde sin valores, hoy queda vacío: se trata igual que un error.
+  if (error || !hoy) {
     return (
       <div className="tarjeta mb-4 d-flex flex-wrap align-items-center gap-3" role="alert">
         <span>
           <i className="bi bi-exclamation-triangle me-2 texto-alerta" aria-hidden="true" />
-          {error}
+          {error ?? 'mindicador.cl no entregó valores de la UF.'}
         </span>
         <button type="button" className="btn btn-outline-secondary btn-sm" onClick={reintentar}>
           Reintentar
