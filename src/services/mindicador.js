@@ -1,12 +1,12 @@
-// Comunicacion con la api
+// Única parte de la aplicación que se comunica con la API de mindicador.cl.
 
-const URL_BASE = "https://mindicador.cl/api";
+const URL_BASE = 'https://mindicador.cl/api';
 const TIEMPO_MAXIMO_MS = 10000;
 
-// La api pide las fechas como DD-MM-AAAA; los <input type="date"> entregan AAA-MM-DD.
+// La API pide las fechas como DD-MM-AAAA; los <input type="date"> entregan AAAA-MM-DD.
 
 function aFormatoApi(fecha) {
-  const [anio, mes, dia] = fecha.split("-");
+  const [anio, mes, dia] = fecha.split('-');
   return `${dia}-${mes}-${anio}`;
 }
 
@@ -18,11 +18,11 @@ async function consultar(ruta) {
       signal: AbortSignal.timeout(TIEMPO_MAXIMO_MS),
     });
   } catch {
-    throw new Error("No hay conexión con mindicador.cl.");
+    throw new Error('No hay conexión con mindicador.cl.');
   }
 
   if (!respuesta.ok) {
-    throw new Error("mindicador.cl no pudo entregar el valor de la UF.");
+    throw new Error('mindicador.cl no pudo entregar el valor de la UF.');
   }
 
   const datos = await respuesta.json();
@@ -34,18 +34,18 @@ async function consultar(ruta) {
   }));
 }
 
-// uf d elos ultimos 31 dias, de la mas antigua a la mas reciente
+// UF de los últimos 31 días, de la más antigua a la más reciente.
 export async function obtenerSerieUF() {
-  const serie = await consultar("/uf");
+  const serie = await consultar('/uf');
   return serie.reverse();
 }
 
-// valor de la uf en una fecha con formato AAAA-MM-DD
+// Valor de la UF en una fecha con formato AAAA-MM-DD.
 export async function obtenerUFPorFecha(fecha) {
   const serie = await consultar(`/uf/${aFormatoApi(fecha)}`);
 
   if (serie.length === 0) {
-    throw new Error("No hay valor de la UF para esa fecha.");
+    throw new Error('No hay valor de la UF para esa fecha.');
   }
   return serie[0].valor;
 }

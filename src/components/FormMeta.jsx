@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useUF from '../hooks/useUF';
-import { hoyISO } from '../utils/fechas';
+import { hoyISO, sumarDias } from '../utils/fechas';
 import { formatearCLP } from '../utils/formato';
 import '../styles/formulario.css';
 
@@ -146,7 +146,7 @@ export default function FormMeta({ valoresIniciales = VALORES_VACIOS, textoBoton
             id="fechaObjetivo"
             name="fechaObjetivo"
             type="date"
-            min={hoyISO()}
+            min={sumarDias(hoyISO(), 1)}
             className={`form-control ${errores.fechaObjetivo ? 'is-invalid' : ''}`}
             value={valores.fechaObjetivo}
             onChange={cambiar}

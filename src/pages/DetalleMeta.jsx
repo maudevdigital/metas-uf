@@ -1,9 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import BarraProgreso from '../components/BarraProgreso';
+import EtiquetaEstado from '../components/EtiquetaEstado';
 import FormAbono from '../components/FormAbono';
 import HistorialAbonos from '../components/HistorialAbonos';
 import ProyeccionMeta from '../components/ProyeccionMeta';
 import useUF from '../hooks/useUF';
+import { estadoMeta } from '../utils/ahorro';
 import { proyectarMeta } from '../utils/proyeccion';
 import { formatearCLP, formatearFecha, formatearUF } from '../utils/formato';
 
@@ -49,7 +51,10 @@ export default function DetalleMeta({ metas, abonos, onAgregarAbono, onEliminarA
           <i className={`bi bi-${meta.icono}`} />
         </span>
         <div className="flex-grow-1">
-          <h1 className="h3 mb-0">{meta.nombre}</h1>
+          <div className="d-flex flex-wrap align-items-center gap-2">
+            <h1 className="h3 mb-0">{meta.nombre}</h1>
+            <EtiquetaEstado estado={estadoMeta(meta, proyeccion.ahorradoUF)} />
+          </div>
           <p className="texto-suave mb-0">Para el {formatearFecha(meta.fechaObjetivo)}</p>
         </div>
         <button
