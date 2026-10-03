@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import EstadoVacio from '../components/EstadoVacio';
 import MetaCard from '../components/MetaCard';
 import PanelUF from '../components/PanelUF';
 import { totalAhorradoUF } from '../utils/ahorro';
@@ -12,12 +12,11 @@ export default function Inicio({ metas, abonos }) {
       <PanelUF />
 
       {metas.length === 0 ? (
-        <div className="tarjeta text-center py-5">
-          <p className="mb-3">Aún no tienes metas de ahorro.</p>
-          <Link to="/metas/nueva" className="btn btn-primary">
-            Crear mi primera meta
-          </Link>
-        </div>
+        <EstadoVacio
+          mensaje="Aún no tienes metas de ahorro."
+          textoAccion="Crear mi primera meta"
+          destino="/metas/nueva"
+        />
       ) : (
         <div className="row g-3">
           {metas.map((meta) => (

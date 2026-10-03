@@ -1,0 +1,29 @@
+/* Etiquetas de estado de una meta */
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.etiqueta-cumplida {
+  color: var(--color-exito);
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.etiqueta-al-dia {
+  color: var(--color-info);
+  background-color: rgba(56, 189, 248, 0.15);
+}
+
+.etiqueta-atrasada {
+  color: var(--color-alerta);
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+.etiqueta-vencida {
+  color: var(--color-error);
+  background-color: rgba(244, 63, 94, 0.15);
+}
