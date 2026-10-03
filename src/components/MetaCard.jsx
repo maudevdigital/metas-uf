@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import BarraProgreso from "./BarraProgreso";
+import EtiquetaEstado from "./EtiquetaEstado";
+import { estadoMeta } from "../utils/ahorro";
 import { formatearFecha, formatearUF } from "../utils/formato";
 
 export default function MetaCard({ meta, ahorradoUF }) {
@@ -20,6 +22,9 @@ export default function MetaCard({ meta, ahorradoUF }) {
           <small className="texto-suave">
             Para el {formatearFecha(meta.fechaObjetivo)}
           </small>
+        </div>
+        <div className="ms-auto">
+          <EtiquetaEstado estado={estadoMeta(meta, ahorradoUF)} />
         </div>
       </div>
 
