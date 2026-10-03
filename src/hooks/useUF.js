@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { obtenerSerieUF } from "../services/mindicador";
+import { useEffect, useState } from 'react';
+import { obtenerSerieUF } from '../services/mindicador';
 
 export default function useUF() {
   const [serie, setSerie] = useState([]);

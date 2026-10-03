@@ -42,7 +42,7 @@ export default function useMetas() {
     setAbonos((actuales) => [...actuales, nuevo]);
   }
 
-    function eliminarAbono(id) {
+  function eliminarAbono(id) {
     setAbonos((actuales) => actuales.filter((abono) => abono.id !== id));
   }
 
@@ -53,5 +53,4 @@ export default function useMetas() {
   }
 
   return { metas, abonos, agregarMeta, agregarAbono, eliminarAbono, eliminarMeta };
-
 }
