@@ -6,12 +6,11 @@ Taller Evaluado 2 — Desarrollo Web y Móvil, segundo semestre 2026.
 
 ## Integrantes
 
-| Nombre | Usuario GitHub |
+| Nombre |
 |---|---|
-| Lucas | [maudevdigital](https://github.com/maudevdigital) |
-| Alumno 2 | _(completar)_ |
-| Alumno 3 | _(completar)_ |
-
+| Matias Catalan|
+| Juan Soto |
+| Lucas Maulen | 
 
 ## Problemática
 
