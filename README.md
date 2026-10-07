@@ -11,7 +11,7 @@ Taller Evaluado 2 — Desarrollo Web y Móvil, segundo semestre 2026.
 | Nombre | Usuario GitHub | Aporte principal |
 |---|---|---|
 | Lucas Maulén Riquelme | [maudevdigital](https://github.com/maudevdigital) | Estructura base, conexión con la API, metas y abonos, panel de la UF, detalle con proyección, documentación |
-| Matías Catalán Ortega | [Matias2004-cmd](https://github.com/Matias2004-cmd) | Formulario de nueva meta con validación y selector de íconos |
+| Matías Catalán Ortega | [Matias2004-cmd](https://github.com/Matias2004-cmd) y [maticata011-bit](https://github.com/maticata011-bit) | Formulario de nueva meta con validación y selector de íconos |
 | Juan Soto Toledo | [JuanUnab-student](https://github.com/JuanUnab-student) | Etiquetas de estado de cada meta y pantalla vacía reutilizable |
 
 ## Problemática
@@ -126,7 +126,7 @@ public/
 └── logo.svg      logo y favicon
 docs/
 ├── capturas/     imágenes de la aplicación
-└── presentacion/ presentación del taller (fuente en LaTeX y PDF)
+└── presentacion/ presentación del taller (presentacion.pdf)
 ```
 
 ## Datos sin backend
@@ -188,7 +188,7 @@ existe hasta el día 9 del mes siguiente. Se da crédito a mindicador.cl en el p
 - `main` guarda la versión entregada y `develop` integra el trabajo del equipo.
 - Cada funcionalidad se hizo en su propia rama `feature/` y entró a `develop` mediante un pull request.
 - Ramas usadas: `estructura-base`, `api-uf`, `metas`, `panel-uf`, `detalle-meta`, `nueva-meta`, `estados`,
-  `ajustes-finales`, `documentacion` y `presentacion`.
+  `ajustes-finales` y `documentacion`.
 
 ## Uso de Inteligencia Artificial
 
